@@ -1,0 +1,15 @@
+body {
+	background: #000;
+	color: #fff;
+}
+.posts {
+    margin-top: 50px;
+}
+.post {
+    padding: 10px 20px 20px 20px;
+    margin-bottom: 20px;
+    background: #3f3f3f;
+}
+.post--full {
+    margin-top: 60px;
+}

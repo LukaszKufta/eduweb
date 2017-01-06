@@ -1,0 +1,44 @@
+ body {
+	background: black;
+	height:100%;
+	margin:0;
+	position:relative;
+}
+
+html {
+	height:100%;
+}
+
+.container {
+	width:100%;
+	text-align:center;
+}
+button {
+	margin: 100px auto 100px;
+	width:250px;
+	height:100px;
+	background: red;
+}
+button:hover {
+	cursor:pointer;
+	background: gold;
+}
+li {
+	display:block;
+	text-decoration:none;
+	margin:10px;
+	padding: 20px;
+}
+
+li:nth-child(odd) {
+	background-color:#FAEBD7;
+}
+li:nth-child(even) {
+	background-color:#F5F5DC;
+}
+
+ul {
+	white-space:pre-wrap;
+	text-align:left;
+	margin-right:30px;
+}

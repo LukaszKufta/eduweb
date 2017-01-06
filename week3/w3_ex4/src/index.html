@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>bootcap w3_ex4</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+</head>
+<body>
+    <div class="container col-xs-4" ng-app="eduValidator" ng-controller="FormController">
+        <h1>Zarejestruj sie</h1>
+        <br>
+        <form class="form" name="eduForm" novalidate ng-submit="register()" ng-show="!successfullySubmitted">
+            <div class="form-group">
+                <input class="form-control" type="text" name="firstName" placeholder="Imię" ng-model="user.firstName" ng-required="true">
+                <p class="error text-center" ng-show="eduForm.firstName.$invalid && eduForm.firstName.$touched">Podaj swoje imię</p>
+            </div>
+            <div class="form-group">
+                <input class="form-control" type="text" name="lastName" placeholder="Nazwisko" ng-model="user.lastName">
+            </div>
+            <div class="form-group">
+                <input class="form-control" type="email" name="email" placeholder="Adres e-mail" ng-model="user.email" ng-required="true">
+                <p class="error text-center" ng-show="eduForm.email.$invalid && eduForm.email.$touched">Podaj poprawny email</p>
+            </div>
+            <div class="form-group">
+                <input class="form-control" type="password" name="password" placeholder="Hasło" ng-model="user.password" ng-required="true" ng-minlength="5">
+            </div>
+            <div class="checkbox" ng-class="{'ng-invalid': eduForm.terms.$invalid, 'ng-dirty': eduForm.terms.$dirty}">
+                <label>
+                    <input type="checkbox" name="terms" value="1" ng-model="user.terms" ng-required="true"> Akceptuję regulamin
+                </label>
+            </div>
+            <div class="form-group">
+                <button class="btn btn-primary" type="submit" ng-disabled="eduForm.$invalid">Zarejestruj</button>
+            </div>
+        </form>
+        <h4 ng-show="successfullySubmitted">Dziękujemy za rejestrację, {{ user.firstName }}!</h4>
+    </div>
+<script src="/js/app.js"></script>
+</body>
+</html>
